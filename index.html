@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>My Gift for you hehe</title>
+    </head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: whitesmoke;
+        }
+        h2 {
+            text-align: center;
+            font-size: 48px;
+            color: #e94d58;
+            margin: 15px 0;
+        }
+        .btn {
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        button {
+            position: absolute;
+            width: 150px;
+            height: inherit;
+            color: white;
+            font-size: 1.2em;
+            border-radius: 30px;
+            outline: none;
+            cursor: pointer;
+            box-shadow: 0 2px 4px gray;
+            border: 2px solid #e94d58;
+            font-size: 1.2em;
+        }
+        button:nth-child(1){
+            margin-left: -200px;
+            background: #e94d58;
+        }
+        button:nth-child(2){
+            margin-right: -200px;
+            background: white;
+            color: #e94d58;
+        }
+    </style>
+    <body>
+        <div class="background">
+            <h2 class="ques">Hi Lab, do you lab me ba?</h2>
+            <img class="gif" src="catusjksk.gif" alt="gif">
+        </div>
+        <div class="btn">
+            <button class="yes">Yes</button>
+            <button class="no">No</button>
+        </div>
+    </body>
+    <script>
+        const background = document.querySelector(".background");
+        const ques = document.querySelector(".ques");
+        const gif = document.querySelector(".gif");
+        const yesbtn = document.querySelector(".yes");
+        const nobtn = document.querySelector(".no");
+
+        yesbtn.addEventListener("click", () => {
+            ques.innerHTML = "I love you too lab hehe";
+            gif.src = "catusjksk.gif";
+        });
+
+        nobtn.addEventListener("mouseover", () => {
+            const nobtnrect = nobtn.getBoundingClientRect();
+            const maxX = window.innerWidth - nobtnrect.width;
+            const maxY = window.innerHeight - nobtnrect.height;
+
+            const ranX = Math.floor(Math.random() * maxX);
+            const ranY = Math.floor(Math.random() * maxY);
+
+            nobtn.style.left = ranX + "px";
+            nobtn.style.top = ranY + "px";
+        });
+
+    </script>
+</html>
